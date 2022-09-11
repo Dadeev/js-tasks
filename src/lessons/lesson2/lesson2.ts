@@ -33,7 +33,15 @@ const sum = (x: number) => (y: number) => x + y;
 // counter(); // 2
 // const counter2 = makeCounter();
 // counter2(); // 1
-// counter(); // 3
+// counter(); // 3 :
+function makeCounter() {
+    let i = 1;
+    const counter = () => {
+        return i++;
+    }
+    return counter;
+}
+
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
