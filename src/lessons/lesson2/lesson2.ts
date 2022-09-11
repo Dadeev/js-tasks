@@ -23,15 +23,7 @@ console.log('lesson 2');
 
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9 :
-function sum(a: number) {
-    function next(b: number) {
-        a = a + b;
-        return next;
-    }
-
-    next.toString = () => a;
-    return next;
-}
+const sum = (x: number) => (y: number) => x + y;
 
 
 // Task 02
