@@ -36,12 +36,8 @@ const sum = (x: number) => (y: number) => x + y;
 // counter(); // 3 :
 function makeCounter() {
     let i = 1;
-    const counter = () => {
-        return i++;
-    }
-    return counter;
+    return () => i++
 }
-
 
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
@@ -49,7 +45,25 @@ function makeCounter() {
 // increase: +1
 // decrease: -1
 // reset: установить счетчик в 0;
-// set: установить счетчик в заданное значение;
+// set: установить счетчик в заданное значение:
+function SuperMakeCounter(number: number) {
+    return {
+        i: number,
+        increase() {
+            return this.i + 1
+        },
+        decrease() {
+            return this.i - 1
+        },
+        reset() {
+            return this.i = 0
+        },
+        set(number2: number) {
+            return this.i = number2
+        }
+
+    }
+}
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
