@@ -78,7 +78,59 @@ function SuperMakeCounter(number: number) {
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
 // Task 05
-// решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
+// решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion :
+// Напишите функцию sumTo(n), которая вычисляет сумму чисел 1 + 2 + ... + n :
+// 1 С использованием цикла :
+function sumTo(n: number) {
+    let sum = 0;
+    for (let i = n; i >= 1; i--) {
+        sum += i;
+    }
+    return sum;
+}
+
+// 2 Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) for n > 1 :
+function sumTo2(n: number) {
+    return n > 1 ? n + sumTo(n - 1) : n
+}
+
+//3 С использованием формулы арифметической прогрессии.
+function sumTo3(n: number) {
+    return n * (n + 1) / 2;
+}
+
+// 4 / Вычислить факториал:
+function factorial(n: number): number {
+    return n !== 1 ? n * factorial(n - 1) : n;
+}
+
+//5 Последовательность чисел Фибоначчи :
+function fib(n: number): number {
+    return n < 2 ? n : fib(n - 1) + fib(n - 2)
+}
+
+// Допустим, у нас есть односвязный список:
+let list = {
+    value: 1,
+    next: {
+        value: 2,
+        next: {
+            value: 3,
+            next: {
+                value: 4,
+                next: null
+            }
+        }
+    }
+};
+
+//6 Напишите функцию printList(list), которая выводит элементы списка по одному:
+function printList(list: any) {
+    console.log(list.next)
+    if (list.nex) {
+        printList(list.next)
+    }
+}
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
